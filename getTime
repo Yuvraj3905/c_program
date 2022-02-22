@@ -1,0 +1,22 @@
+// #include<time.h>
+// #include<sys/time.h>
+// #include<stdio.h>
+// int main (int argc_char**arg.)
+// {
+// 	struct timespec elapsed_from_boot;
+// 	clock_gettime(clock_BOOTTIME,& elapsed_from_boot);
+// 	printf("%d -seconds elapsed from boot\n" elapsed -from -boot .tv_sec);
+// 	return 0;
+// }
+#include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <unistd.h>
+int main(int argc,char **arg)
+{
+    struct timespec elapsed_from_boot;
+    clock_gettime(CLOCK_BOOTTIME, &elapsed_from_boot);
+    printf("%ld -seconds have passed since boot\n", elapsed_from_boot.tv_sec);
+    return 0;
+}
